@@ -10,7 +10,9 @@
 	<form name="frm" ng-submit="addToDo()" novalidate>
 		<input type="text" name="newtodo" ng-model="newtodo" required />
 		<!--Disables button if the form(name="frm") is not valid-->
-		<button ng-disabled="frm.$invalid"></button>
+		<button ng-disabled="frm.$invalid">Go</button>
+		<!--On click load function clearCompleted()-->
+		<button ng-click="clearCompleted()">Clear Completed</button>
 	</form>
 	
 </div 
