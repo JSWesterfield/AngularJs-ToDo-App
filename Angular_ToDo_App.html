@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app="ToDo">
+<head>
+	<meta charset="UTF-8">
+	<title>todo</title>
+</head>
+
+<div ng-controller="todoController">
+	<!--This is our todo function input inside our ng-submit directive-->
+	<form name="frm" ng-submit="addToDo()" novalidate>
+		<input type="text" name="newtodo" ng-model="newtodo" required />
+		<!--Disables button if the form(name="frm") is not valid-->
+		<button ng-disabled="frm.$invalid"></button>
+	</form>
+	
+</div 
+
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+
+angular.module('ToDo',[]).
+controller('todoController',['$scope',function($scope)]){
+	//Get a list of todos
+	$scope.todos = [
+		//status at the end to let us know if is done or not
+		{'title':'Build a todo app', 'done':false}
+	];
+
+	//method to add to do list
+	$scope.addToDo = function(){}
+	//clear the completed to dos
+	$scope.clearCompleted = function(){}
+}
+
+</script>
+
+</body>
